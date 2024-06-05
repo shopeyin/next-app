@@ -10,7 +10,7 @@ import Link from "next/link";
 //   return data;
 // }
 
-export const revalidate = 10;
+// export const revalidate = 10;
 
 async function fetchEndpoint(query = "", { variables } = {}) {
   const res = await fetch("https://apibkofc.globalvoices.com/graphql", {
