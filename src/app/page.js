@@ -120,8 +120,7 @@ export default async function Home() {
   // cookies();
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {/* <Link href={"/about"}>About </Link> */}
-      App router
+      Home - App router
       {data.homepage.homepageHeromaintext}
       <p>{new Date().toLocaleTimeString()}</p>
       {/* <div>
