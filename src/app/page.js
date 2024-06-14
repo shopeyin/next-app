@@ -14,9 +14,6 @@ import Link from "next/link";
 
 async function fetchEndpoint(query = "", { variables } = {}) {
   const res = await fetch("https://apibkofc.globalvoices.com/graphql", {
-    next: {
-      revalidate: 5,
-    },
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -120,8 +117,7 @@ export default async function Home() {
   // cookies();
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {/* <Link href={"/about"}>About </Link> */}
-      App router
+      Home - App router
       {data.homepage.homepageHeromaintext}
       <p>{new Date().toLocaleTimeString()}</p>
       {/* <div>
