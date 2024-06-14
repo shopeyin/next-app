@@ -175,7 +175,7 @@ async function Page() {
 
   return (
     <div>
-      <Link href={"/product-counter"}>Product counter</Link>
+      <Link href={"/product-counter"}>Product counter!!</Link>
       {/* <Button /> */}
       <form>
         <button formAction={revalidateAction}>Revalidate</button>
