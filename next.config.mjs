@@ -1,12 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async rewrites() {
-    return [
-      {
-        source: "/about-us",
-        destination: "/about",
-      },
-    ];
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
   },
 };
 

@@ -17,14 +17,14 @@ export default function RootLayout({ children }) {
         <nav>
           <ul>
             <li>
-              <Link href="/about">About</Link>
+              <Link href="/products">Products</Link>
             </li>
             <li>
               <Link href="/">Home</Link>
             </li>
           </ul>
         </nav>
-        {children}Footer
+        {children}
       </body>
     </html>
   );

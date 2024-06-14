@@ -14,9 +14,6 @@ import Link from "next/link";
 
 async function fetchEndpoint(query = "", { variables } = {}) {
   const res = await fetch("https://apibkofc.globalvoices.com/graphql", {
-    next: {
-      revalidate: 5,
-    },
     method: "post",
     headers: {
       "Content-Type": "application/json",
