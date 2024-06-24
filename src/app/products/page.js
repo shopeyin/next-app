@@ -20,7 +20,8 @@ const BATCH_SIZE = 100;
 export async function fetchData(query = "", { variables } = {}) {
   const res = await fetch("https://apibkofc.globalvoices.com/graphql", {
     // cache: "no-store",
-    next: { tags: ["data"] },
+    // next: { tags: ["data"] },
+    next: { revalidate: 5 },
     method: "post",
     headers: {
       "Content-Type": "application/json",
