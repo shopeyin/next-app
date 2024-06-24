@@ -135,10 +135,10 @@ export async function getCaseStudyCategories(language) {
 
 const BATCH_SIZE = 10;
 
-async function Blog({ searchParams, params: { lang } }) {
-  const query = searchParams?.query || "";
-  const sort = searchParams?.sort || "ASC";
-  const industry = searchParams?.industry || "";
+async function Blog({ params: { lang } }) {
+  //   const query = searchParams?.query || "";
+  //   const sort = searchParams?.sort || "ASC";
+  //   const industry = searchParams?.industry || "";
   // let casestudies = await getAllCStudies(
   //   selectedIndustry,
   //   BATCH_SIZE,
@@ -152,14 +152,14 @@ async function Blog({ searchParams, params: { lang } }) {
   // );
 
   let casestudies = await getAllCStudies(
-    industry,
+    "",
     BATCH_SIZE,
     null,
     null,
     null,
-    sort,
+    "ASC",
     "DATE",
-    query,
+    "",
     "en"
   );
 
@@ -167,9 +167,12 @@ async function Blog({ searchParams, params: { lang } }) {
 
   return (
     <div>
-      {casestudies.nodes.map((item) => {
+      {casestudies.nodes.map((item, i) => {
         return (
-          <div style={{ fontSize: "2rem", padding: "1rem", cursor: "pointer" }}>
+          <div
+            key={i}
+            style={{ fontSize: "2rem", padding: "1rem", cursor: "pointer" }}
+          >
             <Link href={`/blog/${item.slug}`}>
               {item.title} <br />
             </Link>
