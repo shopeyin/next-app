@@ -167,6 +167,7 @@ async function Blog({ params: { lang } }) {
 
   return (
     <div>
+      {lang}
       {casestudies.nodes.map((item, i) => {
         return (
           <div

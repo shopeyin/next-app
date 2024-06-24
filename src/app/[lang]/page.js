@@ -105,8 +105,8 @@ export async function getHome(language) {
   return data;
 }
 
-export default async function Home() {
-  let receivedData = await getHome("en");
+export default async function Home({ params: { lang } }) {
+  let receivedData = await getHome(lang);
   let data = await receivedData?.pages?.nodes[0];
   console.log(data);
   // let res = await fetch("https://jsonplaceholder.typicode.com/posts", {
@@ -118,7 +118,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       Home - App router
-      {data.homepage.homepageHeromaintext}
+      {data?.homepage?.homepageHeromaintext}
       <p>{new Date().toLocaleTimeString()}</p>
       {/* <div>
         {data.map((item) => {
